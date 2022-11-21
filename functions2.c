@@ -11,7 +11,8 @@
  * @size: Size specifier
  * Return: Number of chars printed.
  */
-int print_pointer(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_pointer(va_list types, char buffer[], int flags,
+		int width, int precision, int size)
 {
 	char extra_c = 0, padd = ' ';
 	int ind = BUFF_SIZE - 2, length = 2, padd_start = 1; /* length=2, for '0x' */
@@ -47,7 +48,8 @@ int print_pointer(va_list types, char buffer[], int flags, int width, int precis
 	ind++;
 
 	/*return (write(1, &buffer[i], BUFF_SIZE - i - 1));*/
-	return (write_pointer(buffer, ind, length, width, flags, padd, extra_c, padd_start));
+	return (write_pointer(buffer, ind, length, width, flags,
+				padd, extra_c, padd_start));
 }
 /************************* PRINT NON PRINTABLE *************************/
 /**
@@ -60,7 +62,8 @@ int print_pointer(va_list types, char buffer[], int flags, int width, int precis
  * @size: Size specifier
  * Return: Number of chars printed.
  */
-int print_non_printable(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_non_printable(va_list types, char buffer[], int flags,
+		int width, int precision, int size)
 {
 	int i = 0, offset = 0;
 	char *str = va_arg(types, char *);
@@ -97,7 +100,8 @@ int print_non_printable(va_list types, char buffer[], int flags, int width, int 
  * @size: Size specifier
  * Return: Number of chars printed.
  */
-int print_reverse(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_reverse(va_list types, char buffer[], int flags,
+		int width, int precision, int size)
 {
 	char *str;
 	int i, count = 0;
@@ -138,7 +142,8 @@ int print_reverse(va_list types, char buffer[], int flags, int width, int precis
  * @size: Size specifier
  * Return: Number of chars printed.
  */
-int print_reverse(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_reverse(va_list types, char buffer[], int flags,
+		int width, int precision, int size)
 {
 	char x;
 	char *str;
